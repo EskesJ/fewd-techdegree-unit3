@@ -145,3 +145,49 @@ button[type="submit"] {
   font-style: italic;
   margin-top: 45px;
 }
+
+
+/*------ Media Query------ */
+
+@media (min-width: 768px) {
+  .main-wrapper,
+  .footer-div {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact legend {
+    margin-bottom: 25px;
+  }
+
+  .contact label {
+    width: 30%;
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: 0;
+  }
+
+  .contact-field,
+  .contact-field-zip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-field {
+    justify-content: space-between;
+  }
+
+  .contact-field-zip input[type="number"] {
+    width: 250px;
+    flex-direction: row;
+    position: relative;
+    right: 7.7%;
+  }
+
+
+
+
+
+}
