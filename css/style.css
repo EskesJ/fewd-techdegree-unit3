@@ -39,6 +39,7 @@ textarea {
 textarea,
 select {
   background-color: #e9ebed;
+  padding: 7px;
   border-radius: 3px;
   width: 100%;
 }
@@ -48,13 +49,38 @@ legend {
   font-weight: bold;
 }
 
-/*------ Pseudo class------ */
+/*------ Pseudo------ */
 .contact-field input:hover,
 .contact-field-zip input:hover,
 select:hover,
 textarea:hover {
 border-color: #263945;
 }
+
+.contact-field input[type],
+.contact-field select,
+.contact-field-zip input[type],
+textarea {
+  box-shadow: none;
+  transition: box-shadow 1s;
+}
+
+.contact-field input[type]:focus,
+.contact-field select:focus,
+textarea:focus {
+  box-shadow: inset 0 0 10px #263945;
+}
+
+.contact-field-zip input[type]:focus {
+  box-shadow: inset 0 0 10px #263945;
+}
+
+input::placeholder {
+  text-align: right;
+  font-style: italic;
+  padding-right: 10px;
+}
+
 
 /*------ HEADER ONLY ------ */
 
@@ -110,7 +136,7 @@ label:first-of-type {
 
 .contact label {
   display: block;
-  margin: 20px 0 10px 20px;
+  margin: 20px 0 10px;
 }
 
 
@@ -162,7 +188,7 @@ textarea {
   padding: 10px;
 }
 
-/*------ submit buttton------ */
+/*------ submit buttton style and hover/focus state------ */
 
 button[type="submit"] {
   background-color: #2BB4FF;
@@ -172,7 +198,17 @@ button[type="submit"] {
   width: 100%;
   height: 60px;
   margin-top: 40px;
+  box-shadow: none;
+  transition: box-shadow 1s, background-color 1s;
 }
+
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #263945;
+    box-shadow: inset 0 0 10px white;
+}
+
 
 /*------ footer------ */
 
@@ -183,7 +219,7 @@ button[type="submit"] {
   text-align: center;
   color: #A7ADB2;
   font-style: italic;
-  margin-top: 45px;
+  margin-top: 25px;
 }
 
 
@@ -219,27 +255,40 @@ button[type="submit"] {
     justify-content: space-between;
   }
 
+  .contact-field input,
+  select {
+    width: 69%;
+  }
+
   .contact-field-zip input[type="number"] {
     width: 250px;
     flex-direction: row;
     position: relative;
-    right: 7.7%;
+    left: 1%;
   }
 
   .contact input[type],
   .contact-field select {
-    margin-left: 0px;
-    box-shadow: none;
-    transition: margin-left 2s, box-shadow 1s;
+    margin-right: 0px;
+    transition: margin-right 2s, box-shadow 1s;
   }
+
+  .contact-field-zip input[type] {
+    margin-left: 0px;
+    transition: margin-left 2s,box-shadow 1s;
+  }
+
 
 
   /*------ Pseudo class Media Query------ */
 
-  .contact input[type]:focus,
+  .contact-field input[type]:focus,
   .contact-field select:focus {
-    margin-left:-30px;
-    box-shadow: inset 0 0 10px #263945;
+    margin-right: 6%;
 }
+
+  .contact-field-zip input[type]:focus {
+    margin-left: -3%;
+  }
 
 }
